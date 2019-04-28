@@ -60,6 +60,7 @@ flipButton.addEventListener('click', () => {
         const subtractMoney = subtractBetFromWallet(betAmount, walletAmount);
         walletMessage.textContent = 'You have $' + subtractMoney + ' in your wallet';
     }
+
 });
 
 function addingBetToWallet(betAmount, walletAmount) {
