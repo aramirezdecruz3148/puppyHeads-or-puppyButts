@@ -15,6 +15,7 @@ let wins = 0;
 let losses = 0;
 let walletAmount = 150;
 
+
 //wiring up listening event
 flipButton.addEventListener('click', () => {
     const randomNumber = Math.random();
@@ -55,9 +56,16 @@ flipButton.addEventListener('click', () => {
     if(guessedCorrect) {
         const addMoney = addingBetToWallet(betAmount, walletAmount);
         walletMessage.textContent = 'You have $' + addMoney + ' in your wallet';
+    } else {
+        const subtractMoney = subtractBetFromWallet(betAmount, walletAmount);
+        walletMessage.textContent = 'You have $' + subtractMoney + ' in your wallet';
     }
 });
 
 function addingBetToWallet(betAmount, walletAmount) {
     return parseFloat(betAmount) + parseFloat(walletAmount);
+}
+
+function subtractBetFromWallet(betAmount, walletAmount) {
+    return parseFloat(walletAmount) - parseFloat(betAmount);
 }
