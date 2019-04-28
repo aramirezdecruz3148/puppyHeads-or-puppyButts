@@ -7,10 +7,13 @@ const message = document.getElementById('message');
 const headsChoice = document.getElementById('heads-choice');
 const winsDisplay = document.getElementById('wins');
 const lossesDisplay = document.getElementById('losses');
+const betBox = document.getElementById('bet-box');
+const walletMessage = document.getElementById('wallet');
 
 //initializing things
 let wins = 0;
 let losses = 0;
+let walletAmount = 150;
 
 //wiring up listening event
 flipButton.addEventListener('click', () => {
@@ -38,7 +41,7 @@ flipButton.addEventListener('click', () => {
         message.textContent = 'You lose!';
     }
 
-    //increment wins or losses up
+    //increment wins or losses and add/subtract bet amount from wallet
     if(guessedCorrect) {
         wins++;
         winsDisplay.textContent = 'Wins: ' + wins;
@@ -47,4 +50,14 @@ flipButton.addEventListener('click', () => {
         lossesDisplay.textContent = 'Losses: ' + losses;
     }
 
+    //creating money betting feature
+    let betAmount = betBox.value;
+    if(guessedCorrect) {
+        const addMoney = addingBetToWallet(betAmount, walletAmount);
+        walletMessage.textContent = 'You have $' + addMoney + ' in your wallet';
+    }
 });
+
+function addingBetToWallet(betAmount, walletAmount) {
+    return parseFloat(betAmount) + parseFloat(walletAmount);
+}
