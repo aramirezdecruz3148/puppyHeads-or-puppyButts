@@ -17,6 +17,16 @@ img {
     border: solid #ead06d 10px;
 }
 
+#message {
+    color: #3D4D51;
+    font-weight: bolder;
+}
+
+.radio-button {
+    font-size: .7em;
+    color: #935F45;
+}
+
 button {
     background-color: #C4D6C0;
     height: 50px;
