@@ -1,9 +1,9 @@
 
 function headsOrTails(number) {
     if(number < .5) {
-        return 'heads';
+        return 'Heads';
     } else {
-        return 'tails';
+        return 'Tails';
     }
 }
 

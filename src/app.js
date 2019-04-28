@@ -7,6 +7,12 @@ const puppyImage = document.getElementById('puppy-image');
 //initializing things
 
 //wiring up listening event
-flipButton.addEventListener('click', ()=> {
+flipButton.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    const flip = headsOrTails(randomNumber);
+
+    //change image display depending on flip
+    const imageSource = './assets/' + flip + '.jpg';
+    puppyImage.src = imageSource;
 
 });
