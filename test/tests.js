@@ -1,12 +1,33 @@
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
+function headsOrTails(number) {
+    if(number < .5) {
+        return 'heads';
+    } else {
+        return 'tails';
+    }
+}
+
+test('get heads for number less than .5', (assert) => {
     //Arrange
-    // Set up your parameters and expectations
+    const number = .49;
+    const expected = 'heads';
 
     //Act 
-    // Call the function you're testing and set the result to a const
+    const result = headsOrTails(number);
 
     //Assert
-    assert.equal(true, false);
+    assert.equal(result, expected);
+});
+
+test('get tails for number greater than .5', (assert) => {
+    //Arrange
+    const number = .5;
+    const expected = 'tails';
+
+    //Act
+    const result = headsOrTails(number);
+
+    //Assert
+    assert.equal(result, expected);
 });
