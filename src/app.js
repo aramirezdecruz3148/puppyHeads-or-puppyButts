@@ -21,4 +21,30 @@ flipButton.addEventListener('click', () => {
     const imageSource = './assets/' + flip + '.jpg';
     puppyImage.src = imageSource;
 
+    //initializing empty guess, making it Heads or Tails
+    //linking the radio button guess to our flip button
+    let guess = '';
+    if(headsChoice.checked) {
+        guess = 'Heads';
+    } else {
+        guess = 'Tails';
+    }
+
+    //display message and change based on user selection
+    const guessedCorrect = flip === guess;
+    if(guessedCorrect) {
+        message.textContent = 'You won!';
+    } else {
+        message.textContent = 'You lose!';
+    }
+
+    //increment wins or losses up
+    if(guessedCorrect) {
+        wins++;
+        winsDisplay.textContent = 'Wins: ' + wins;
+    } else {
+        losses++;
+        lossesDisplay.textContent = 'Losses: ' + losses;
+    }
+
 });
