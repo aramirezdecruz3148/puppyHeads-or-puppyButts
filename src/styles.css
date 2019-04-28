@@ -11,6 +11,20 @@ h1 {
     background-color: #3D4D51;
 }
 
+#wins-losses {
+    margin-top: -2%;
+    margin-bottom: 3%;
+}
+
+#wins {
+    color: rgb(138, 6, 6);
+    margin-right: 1%;
+}
+
+#losses {
+    color: rgb(34, 104, 34);
+}
+
 img {
     height: 225px;
     width: 400px;
