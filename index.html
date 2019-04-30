@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./src/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>puppyHeads or puppyButts</title>
+</head>
+<body>
+    <header>
+        <div id="header">
+                <h1>Puppy Heads or Puppy Butts?</h1>
+        </div>
+    </header>
+        <main>
+                <p id="wins-losses-wallet">
+                    <span id="wins">wins: 0</span>
+                    
+                    <span id="losses">losses: 0</span>
+
+                    <p id="wallet">You have $150 in your wallet</p>
+                 </p>
+            <p>
+                <img id="puppy-image" src="./assets/Heads.jpg" alt="picture of puppy head">
+            </p>
+            <p id="message">Pick Heads or Tails and place a bet!</p>
+                <label class="radio-button" name="puppy-side">
+                    <input id="heads-choice" type="radio" name="puppy-side" checked>Heads
+                </label>
+                <label class="radio-button" name="puppy-side">
+                    <input id="tails-choice" type="radio" name="puppy-side">Tails
+                </label>
+                <label id="bet-text" for="bet-box">Enter your bet amount
+                    <input id="bet-box" type="text" name="betting" value="0">
+                </label>
+            <p>
+                <button id="flip-button">Flip the puppy!</button>
+            </p>
+
+        </main>
+        <footer>2019 Alex Ramirez de Cruz</footer>
+<script type="module" src="./src/app.js"></script>  
+</body>
+</html>

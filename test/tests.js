@@ -1,12 +1,26 @@
+import headsOrTails from '../src/heads-or-tails.js';
 const test = QUnit.test;
 
-test('time to test a function', function(assert) {
+test('get heads for number less than .5', (assert) => {
     //Arrange
-    // Set up your parameters and expectations
+    const number = .49;
+    const expected = 'Heads';
 
     //Act 
-    // Call the function you're testing and set the result to a const
+    const result = headsOrTails(number);
 
     //Assert
-    assert.equal(true, false);
+    assert.equal(result, expected);
+});
+
+test('get tails for number greater than .5', (assert) => {
+    //Arrange
+    const number = .5;
+    const expected = 'Tails';
+
+    //Act
+    const result = headsOrTails(number);
+
+    //Assert
+    assert.equal(result, expected);
 });
