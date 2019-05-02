@@ -52,21 +52,23 @@ flipButton.addEventListener('click', () => {
     }
 
     //creating money betting feature
-    let betAmount = betBox.value;
+    let betAmount = parseInt(betBox.value);
     if(guessedCorrect) {
-        const addMoney = addingBetToWallet(betAmount, walletAmount);
+        const addMoney = addingBetToWallet(betAmount);
         walletMessage.textContent = 'You have $' + addMoney + ' in your wallet';
     } else {
-        const subtractMoney = subtractBetFromWallet(betAmount, walletAmount);
+        const subtractMoney = subtractBetFromWallet(betAmount);
         walletMessage.textContent = 'You have $' + subtractMoney + ' in your wallet';
     }
 
 });
 
-function addingBetToWallet(betAmount, walletAmount) {
-    return parseFloat(betAmount) + parseFloat(walletAmount);
+function addingBetToWallet(betAmount) {
+    walletAmount = walletAmount + betAmount;
+    return walletAmount;
 }
 
-function subtractBetFromWallet(betAmount, walletAmount) {
-    return parseFloat(walletAmount) - parseFloat(betAmount);
+function subtractBetFromWallet(betAmount) {
+    walletAmount = walletAmount - betAmount;
+    return walletAmount;
 }
